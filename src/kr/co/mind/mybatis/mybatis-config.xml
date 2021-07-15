@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	<configuration>
+		<typeAliases>
+			<typeAlias alias="Blog" type="kr.co.mind.blog.domain.BlogEntity"/>
+			<typeAlias alias="Auto" type="kr.co.mind.blog.domain.BlogAuthEntity"/>
+			<typeAlias alias="Board" type="kr.co.mind.board.domain.BoardEntity"/>
+			<typeAlias alias="Content" type="kr.co.mind.content.domain.ContentEntity"/>
+			<typeAlias alias="Menu" type="kr.co.mind.menu.domain.MenuEntity"/>
+			<typeAlias alias="Profile" type="kr.co.mind.profile.domain.ProfileEntity"/>
+			<typeAlias alias="Customer" type="kr.co.mind.customer.domain.CustomerEntity"/>
+		</typeAliases>
+	</configuration>

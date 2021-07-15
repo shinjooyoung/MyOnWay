@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kr.co.mind.mybatis.mapper.BlogMapper">
+
+	<sql id="blog-colume">
+		id,
+		profileId,
+		name,
+		createDate,
+		updateDate
+	</sql>
+
+	<sql id="blogAuto-colume">
+		id,
+		auto,
+		profileId,
+		createDate,
+		updateDate
+	</sql>
+
+	<insert id="insertBlog" parameterType="Blog">
+		INSERT INTO blog (
+			<include refid="blog-colume"/>
+		) VALUES (
+			#{id},
+			#{profileId},
+			#{name},
+			#{createDate}
+			#{updateDate}
+		)
+	</insert>
+	
+	<update id="updateBlog" parameterType="Blog">
+		UPDATE 
+			blog 
+		SET
+			name = #{name},
+			updateDate = NOW()
+		WHERE 1=1
+			AND id = #{id}
+	</update>
+
+	<delete id="deleteBlog" parameterType="list">
+		DELETE FROM 
+			blog
+		WHERE 1=1
+			AND id IN
+			<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+			</foreach>	
+	</delete>
+	
+	<select id="selectBlog" parameterType="Blog" resultType="list">
+		SELECT
+			<include refid="blog-colume"/>
+		FROM
+			blog
+		WHERE 1=1
+			AND id IN
+			<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+			</foreach>
+	</select>
+	
+	<insert id="insertBlogAuth" parameterType="Auto">
+		INSERT INTO insertAuth (
+			<include refid="blogAuto-colume"/>
+		) VALUES (
+			#{id},
+			#{auth},
+			#{profileId},
+			#{createDate}
+			#{updateDate}
+		)
+	</insert>
+	
+	<select id="selectBlogAuth" parameterType="Blog" resultType="list">
+		SELECT
+			<include refid="blogAuto-colume"/>
+		FROM
+			blog
+		WHERE 1=1
+			AND id IN
+			<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+			</foreach>
+	</select>
+	
+</mapper>
