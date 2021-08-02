@@ -1,1 +1,2 @@
-# 뭐든지 될 수 있는 익명으로 이루어진 사이트
+# https://shinjooyoung.github.io/project/MyOnWay/ 참조
+
