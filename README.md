@@ -1,4 +1,4 @@
 # MyOnWay
 
-### https://shinjooyoung.github.io/project/MyOnWay/ 참조
+### https://shinjooyoung.github.io/projects/MyOnWay/ 참조
 
